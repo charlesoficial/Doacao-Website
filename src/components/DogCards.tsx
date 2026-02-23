@@ -1,6 +1,6 @@
-import dog1 from "@/assets/dog1.jpg";
-import dog2 from "@/assets/dog2.jpg";
-import dog3 from "@/assets/dog3.jpg";
+import dog1 from "@/assets/caramelo_novo.jpg";
+import dog2 from "@/assets/neve_novo.jpg";
+import dog3 from "@/assets/pretinho_v3.png";
 import { Heart, Clock, MapPin, Thermometer } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -10,18 +10,18 @@ const dogs = [
     image: dog1,
     age: "3 meses",
     location: "São Paulo, SP",
-    story: "Encontrado sozinho debaixo de chuva, tremendo de frio. Precisa de cuidados veterinários e muito amor.",
+    story: "Este é o Caramelo, um cãozinho que nunca conheceu o conforto de um lar e hoje depende de ajuda para alimentação, cuidados e atendimento veterinário. Sua contribuição é essencial para que ele tenha dignidade, proteção e uma verdadeira chance de viver com amor 🐾",
     urgent: true,
     need: "Tratamento veterinário",
     raised: 320,
     goal: 800,
   },
   {
-    name: "Neve",
+    name: "Abrigo",
     image: dog2,
     age: "2 meses",
     location: "Rio de Janeiro, RJ",
-    story: "Machucou a patinha e foi abandonada na calçada. Está se recuperando, mas precisa de ajuda com o tratamento.",
+    story: "Este é um dos abrigos mais necessitados no momento. São dezenas de cães que dependem de doações para alimentação, cuidados e atendimento veterinário. Sua ajuda é essencial para que eles tenham dignidade e uma nova chance.” 🐾",
     urgent: true,
     need: "Cirurgia na patinha",
     raised: 1200,
@@ -32,11 +32,11 @@ const dogs = [
     image: dog3,
     age: "4 meses",
     location: "Belo Horizonte, MG",
-    story: "Nasceu na rua e nunca conheceu um lar. Seus olhinhos pedem uma chance de ser amado por alguém.",
-    urgent: false,
-    need: "Vacinas e castração",
+    story: "Este é o Pretinho, nosso guerreirinho. mais precisa muito da nossa atenção neste momento. Ele está com a patinha quebrada e precisa de uma cirurgia de R$6.000 para voltar a andar. Cada doação é um passo para que ele possa correr novamente.” 🐾",
+    urgent: true,
+    need: "Cirurgia na patinha",
     raised: 150,
-    goal: 500,
+    goal: 6000,
   },
 ];
 

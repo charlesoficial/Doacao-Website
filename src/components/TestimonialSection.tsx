@@ -1,21 +1,27 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import testimonial1 from "../assets/testimonial1.jpg";
+import testimonial2 from "../assets/testimonial2.jpg";
+import testimonial3 from "../assets/testimonial3.jpg";
 
 const testimonials = [
   {
     text: "Adotei a Luna pela PataAmiga e ela mudou minha vida completamente. Nunca recebi tanto amor incondicional. Obrigada por existirem! 💛",
     name: "Maria Silva",
     role: "Adotou a Luna",
+    image: testimonial1,
   },
   {
     text: "Faço doação mensal há 2 anos. Ver o antes e depois dos cachorrinhos me emociona toda vez. O trabalho dessa equipe é incrível.",
     name: "Carlos Santos",
     role: "Doador mensal",
+    image: testimonial2,
   },
   {
     text: "Sou voluntária aos finais de semana e posso dizer: cada centavo doado é usado com muito cuidado e amor. Confiem nesse projeto!",
     name: "Ana Oliveira",
     role: "Voluntária",
+    image: testimonial3,
   },
 ];
 
@@ -51,8 +57,12 @@ const TestimonialSection = () => {
                 "{t.text}"
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-warm-glow flex items-center justify-center text-primary-foreground font-bold text-sm">
-                  {t.name[0]}
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-primary to-warm-glow">
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-bold text-foreground text-sm">{t.name}</div>

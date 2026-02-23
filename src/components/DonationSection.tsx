@@ -2,7 +2,15 @@ import { Heart, HandHeart, Sparkles, Shield, CreditCard } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const amounts = [10, 25, 50, 100, 200];
+const amounts = [10, 25, 50, 100, 500];
+
+const checkoutLinks: Record<number, string> = {
+  10: "https://pay.s6x.com.br/hWjq1XeF",
+  25: "https://pay.s6x.com.br/chZAtymO",
+  50: "https://pay.s6x.com.br/IFYMMDHN",
+  100: "https://pay.s6x.com.br/VJLUHZZO",
+  500: "https://pay.s6x.com.br/5JRQMQHL",
+};
 
 const DonationSection = () => {
   const [selected, setSelected] = useState(50);
@@ -11,7 +19,13 @@ const DonationSection = () => {
 
   const handleDonate = () => {
     const amount = isCustom ? Number(custom) : selected;
-    alert(`Obrigado pela sua doação de R$${amount}! 🐶💛 Os cachorrinhos agradecem!`);
+    const link = checkoutLinks[amount];
+
+    if (link) {
+      window.open(link, "_blank");
+    } else {
+      alert(`Para doações de R$${amount}, entre em contato conosco ou escolha um dos valores sugeridos para checkout imediato.`);
+    }
   };
 
   return (
@@ -67,11 +81,10 @@ const DonationSection = () => {
                     setSelected(amount);
                     setIsCustom(false);
                   }}
-                  className={`py-3.5 px-4 rounded-2xl font-bold text-lg transition-all duration-300 ${
-                    !isCustom && selected === amount
+                  className={`py-3.5 px-4 rounded-2xl font-bold text-lg transition-all duration-300 ${!isCustom && selected === amount
                       ? "bg-primary text-primary-foreground shadow-warm scale-105"
                       : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                  }`}
+                    }`}
                 >
                   R${amount}
                 </motion.button>
