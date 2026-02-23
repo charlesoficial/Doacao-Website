@@ -111,32 +111,20 @@ const DonationSection = () => {
               ))}
             </div>
 
-            {/* Custom amount */}
-            <div className="mb-6 sm:mb-8">
-              <label className="block text-sm font-semibold text-muted-foreground mb-2">
-                Ou digite outro valor:
-              </label>
-              <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground font-bold text-base sm:text-lg">
-                  R$
-                </span>
-                <input
-                  type="number"
-                  inputMode="numeric"
-                  placeholder="Outro valor"
-                  value={custom}
-                  onChange={(e) => {
-                    setCustom(e.target.value);
-                    setIsCustom(true);
-                    setSelected(null);
-                  }}
-                  onFocus={() => {
-                    setIsCustom(true);
-                    setSelected(null);
-                  }}
-                  className="w-full pl-12 sm:pl-14 pr-4 py-3.5 sm:py-4 rounded-2xl bg-secondary text-foreground placeholder:text-muted-foreground border-2 border-transparent focus:border-primary focus:outline-none text-base sm:text-lg font-semibold transition-all"
-                />
-              </div>
+            {/* Contact for other amounts */}
+            <div className="mb-6 sm:mb-8 bg-secondary/60 rounded-2xl p-4 text-center">
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                Somente os valores acima podem ser doados diretamente.{" "}
+                <a
+                  href="https://wa.me/5511965749806?text=quero%20doar%20um%20valor%20diferente%20dos%20valores%20definidos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors"
+                >
+                  Entre em contato
+                </a>{" "}
+                para doar um valor diferente.
+              </p>
             </div>
 
             {/* Info */}
