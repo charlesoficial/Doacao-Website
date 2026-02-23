@@ -37,9 +37,10 @@ const DonationSection = () => {
     if (link) {
       window.open(link, "_blank");
     } else {
-      // For custom amounts not in our predefined list, redirect to the closest higher value or show message
-      alert(
-        `Para doações de R$${amount}, entre em contato conosco ou escolha um dos valores sugeridos (R$10, R$25, R$50, R$100 ou R$500) para checkout imediato.`
+      // Custom amount — redirect to WhatsApp
+      window.open(
+        "https://wa.me/5511965749806?text=quero%20doar%20um%20valor%20diferente%20dos%20valores%20definidos",
+        "_blank"
       );
     }
   };
