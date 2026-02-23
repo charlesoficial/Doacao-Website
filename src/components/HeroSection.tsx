@@ -38,7 +38,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[1.05] mb-8"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[1.05] mb-6 sm:mb-8"
           >
             Eles só
             <br />
@@ -50,7 +50,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.7 }}
-            className="text-lg md:text-xl text-primary-foreground/70 mb-12 leading-relaxed max-w-lg"
+            className="text-base sm:text-lg md:text-xl text-primary-foreground/70 mb-8 sm:mb-12 leading-relaxed max-w-lg"
           >
             Centenas de cachorrinhos abandonados esperam por um gesto de carinho.
             Sua doação pode salvar uma vida e dar um lar a quem mais precisa.
@@ -82,7 +82,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.3, duration: 0.8 }}
-            className="flex items-center gap-8 mt-16"
+            className="flex flex-wrap items-center gap-6 sm:gap-8 mt-10 sm:mt-16"
           >
             {[
               { num: "2.340+", label: "resgatados" },

@@ -27,7 +27,7 @@ const testimonials = [
 
 const TestimonialSection = () => {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-16 sm:py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,7 +42,7 @@ const TestimonialSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-3 max-w-5xl mx-auto">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
@@ -50,7 +50,7 @@ const TestimonialSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="bg-card rounded-3xl p-8 shadow-warm hover:shadow-warm-lg transition-all hover:-translate-y-1 relative"
+              className="bg-card rounded-3xl p-6 sm:p-8 shadow-warm hover:shadow-warm-lg transition-all hover:-translate-y-1 relative"
             >
               <Quote className="w-10 h-10 text-primary/15 absolute top-6 right-6" />
               <p className="text-muted-foreground text-sm leading-relaxed mb-6 italic">

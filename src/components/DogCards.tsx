@@ -42,7 +42,7 @@ const dogs = [
 
 const DogCards = () => {
   return (
-    <section id="cachorrinhos" className="py-24 bg-background relative">
+    <section id="cachorrinhos" className="py-16 sm:py-24 bg-background relative">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,7 +60,7 @@ const DogCards = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
           {dogs.map((dog, i) => (
             <motion.div
               key={dog.name}
@@ -74,7 +74,7 @@ const DogCards = () => {
                 <img
                   src={dog.image}
                   alt={dog.name}
-                  className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-56 sm:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
                 {dog.urgent && (
@@ -95,8 +95,8 @@ const DogCards = () => {
                 </div>
               </div>
 
-              <div className="p-6">
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+              <div className="p-4 sm:p-6">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
                   <span className="flex items-center gap-1.5 bg-secondary px-3 py-1 rounded-full">
                     <Clock className="w-3.5 h-3.5" />
                     {dog.age}
@@ -107,7 +107,7 @@ const DogCards = () => {
                   </span>
                 </div>
 
-                <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5">
                   "{dog.story}"
                 </p>
 

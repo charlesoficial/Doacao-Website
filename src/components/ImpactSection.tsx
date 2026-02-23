@@ -50,7 +50,7 @@ const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
 
 const ImpactSection = () => {
   return (
-    <section id="impacto" className="py-24 bg-warm-gradient relative overflow-hidden">
+    <section id="impacto" className="py-16 sm:py-24 bg-warm-gradient relative overflow-hidden">
       {/* Decorative paw prints */}
       <div className="absolute top-20 right-20 text-primary/5 rotate-12">
         <Heart className="w-64 h-64" />
@@ -73,7 +73,7 @@ const ImpactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -81,12 +81,12 @@ const ImpactSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="bg-card rounded-3xl p-6 md:p-8 text-center shadow-warm transition-all hover:-translate-y-2 hover:shadow-warm-lg group"
+              className="bg-card rounded-3xl p-4 sm:p-6 md:p-8 text-center shadow-warm transition-all hover:-translate-y-2 hover:shadow-warm-lg group"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-5 group-hover:bg-primary/20 transition-colors group-hover:scale-110 duration-300">
                 <stat.icon className="w-8 h-8 text-primary" />
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-1">
                 <CountUp target={stat.number} suffix={stat.suffix} />
               </div>
               <div className="text-sm font-semibold text-primary mb-1">{stat.label}</div>
@@ -101,7 +101,7 @@ const ImpactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-16 bg-card rounded-3xl p-8 shadow-warm max-w-2xl mx-auto"
+          className="mt-12 sm:mt-16 bg-card rounded-3xl p-6 sm:p-8 shadow-warm max-w-2xl mx-auto"
         >
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-bold text-foreground">Meta do Mês</h3>

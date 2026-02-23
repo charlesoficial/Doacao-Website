@@ -2,14 +2,14 @@ import { Heart, PawPrint, Instagram, Facebook, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground py-16 relative overflow-hidden">
+    <footer className="bg-foreground py-10 sm:py-16 relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute top-10 right-10 text-primary-foreground/5">
         <PawPrint className="w-40 h-40" />
       </div>
 
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-10 mb-12">
+        <div className="grid gap-8 sm:gap-10 md:grid-cols-3 mb-10 sm:mb-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
