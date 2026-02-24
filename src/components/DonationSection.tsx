@@ -39,7 +39,7 @@ const DonationSection = () => {
     } else {
       // Custom amount — redirect to WhatsApp
       window.open(
-        "https://wa.me/5511965749806?text=quero%20doar%20um%20valor%20diferente%20dos%20valores%20definidos",
+        "https://wa.me/5511965479806?text=quero%20doar%20um%20valor%20diferente%20dos%20valores%20definidos",
         "_blank"
       );
     }
@@ -111,21 +111,59 @@ const DonationSection = () => {
               ))}
             </div>
 
-            {/* Contact for other amounts */}
-            <div className="mb-6 sm:mb-8 bg-secondary/60 rounded-2xl p-4 text-center">
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Somente os valores acima podem ser doados diretamente.{" "}
-                <a
-                  href="https://wa.me/5511965749806?text=quero%20doar%20um%20valor%20diferente%20dos%20valores%20definidos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors"
-                >
-                  Entre em contato
-                </a>{" "}
-                para doar um valor diferente.
-              </p>
+            {/* Custom amount input */}
+            <div className="mb-4">
+              <label className="block text-sm font-semibold text-muted-foreground mb-2">
+                Ou digite outro valor:
+              </label>
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground font-bold text-base sm:text-lg">
+                  R$
+                </span>
+                <input
+                  type="number"
+                  inputMode="numeric"
+                  placeholder="Outro valor"
+                  value={custom}
+                  onChange={(e) => {
+                    setCustom(e.target.value);
+                    setIsCustom(true);
+                    setSelected(null);
+                  }}
+                  onFocus={() => {
+                    setIsCustom(true);
+                    setSelected(null);
+                  }}
+                  className="w-full pl-12 sm:pl-14 pr-4 py-3.5 sm:py-4 rounded-2xl bg-secondary text-foreground placeholder:text-muted-foreground border-2 border-transparent focus:border-primary focus:outline-none text-base sm:text-lg font-semibold transition-all"
+                />
+              </div>
             </div>
+
+            {/* Dynamic WhatsApp Message for custom amounts */}
+            {isCustom && custom && (
+              <div className="mb-6 sm:mb-8 bg-secondary/60 rounded-2xl p-4 text-center border border-primary/10">
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  Para doar <strong className="text-primary font-bold text-base">R${Number(custom).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong> entre em contato conosco pelo WhatsApp{" "}
+                  <a
+                    href="https://wa.me/5511965479806?text=quero%20doar%20um%20valor%20diferente%20dos%20valores%20definidos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors"
+                  >
+                    wa.me/5511965479806
+                  </a>{" "}
+                  ou selecione um dos valores definidos acima.
+                </p>
+              </div>
+            )}
+
+            {!isCustom && (
+              <div className="mb-6 sm:mb-8 bg-secondary/30 rounded-2xl p-4 text-center">
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  Somente os valores sugeridos podem ser doados diretamente pelo site. Para outros valores, entre em contato.
+                </p>
+              </div>
+            )}
 
             {/* Info */}
             <div className="bg-warm-light rounded-2xl p-4 sm:p-5 mb-6 sm:mb-8 flex items-start gap-3 border border-primary/10">

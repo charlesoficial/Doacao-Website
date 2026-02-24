@@ -30,7 +30,7 @@ const HeroSection = () => {
           >
             <Heart className="w-4 h-4 fill-current text-heart" />
             <span className="text-sm font-semibold tracking-wide uppercase text-heart">
-              Ajude um amiguinho
+              Faça a diferença
             </span>
           </motion.div>
 
