@@ -143,14 +143,14 @@ const DonationSection = () => {
             {isCustom && custom && !isNaN(parseFloat(custom)) && (
               <div className="mb-6 sm:mb-8 bg-secondary/60 rounded-2xl p-4 text-center border border-primary/10">
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  Para doar <strong className="text-primary font-bold text-base">R$ {parseFloat(custom).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong> entre em contato conosco pelo WhatsApp{" "}
+                  Para doar <strong className="text-primary font-bold text-base">R$ {parseFloat(custom).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong> entre em contato conosco pelo{" "}
                   <a
                     href="https://wa.me/5511965749806?text=quero%20doar%20um%20valor%20diferente%20dos%20valores%20definidos"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors"
                   >
-                    wa.me/5511965749806
+                    WhatsApp
                   </a>{" "}
                   ou selecione um dos valores definidos acima.
                 </p>
